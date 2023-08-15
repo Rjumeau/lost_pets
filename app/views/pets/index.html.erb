@@ -1,0 +1,16 @@
+<h1>All pets found 😿</h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= link_to pet.name, pet_path(pet) %>
+      <em><%= pet.species %></em>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to new_pet_path, class: 'text-decoration-none' do %>
+  <div class="d-flex gap-3">
+    <i class="fa-solid fa-plus pt-1"> </i>
+    <p>I found a new lost pet</p>
+  </div>
+<% end %>
